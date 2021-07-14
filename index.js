@@ -9,6 +9,12 @@ app.get("/", async (req, res) => {
 
 app.get("/login", async (req, res) => {
   // template html file
+  res.sendFile(__dirname + "/login.html");
+});
+
+app.get("/success", (req, res) => {
+  // Success Page
+  res.send("Success");
 });
 
 app.post("/receive", async (req, res) => {});
