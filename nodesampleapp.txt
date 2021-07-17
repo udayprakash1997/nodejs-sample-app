@@ -1,5 +1,0 @@
-/ - landing page
-/login - sawo form
-/receive - return payload as json obj
-if success - logged in successfully, payload in console
-if failed - redirect to /login
