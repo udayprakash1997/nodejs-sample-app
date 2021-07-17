@@ -10,7 +10,7 @@
 }
 
 body {
-  background-image: url("../static/bg.png");
+  background-image: url("../images/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;

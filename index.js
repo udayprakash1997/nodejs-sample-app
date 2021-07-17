@@ -1,21 +1,19 @@
 const express = require("express");
 const app = express();
 
-app.use(express.static("public"));
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", async (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/login", async (req, res) => {
-  // template html file
-  res.sendFile(__dirname + "/login.html");
+app.get("/login", (req, res) => {
+  res.sendFile(__dirname + "/public/login.html");
 });
 
 app.get("/success", (req, res) => {
-  // Success Page
-  res.send("Success");
+  res.sendFile(__dirname + "/public/success.html");
 });
 
-app.post("/receive", async (req, res) => {});
 app.listen("3000", console.log("Listening on port 3000."));
