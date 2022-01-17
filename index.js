@@ -19,4 +19,7 @@ app.get("/success", (req, res) => {
   res.sendFile(__dirname + "/public/success.html");
 });
 
-app.listen("3000", console.log("Listening on port 3000."));
+app.listen(
+  process.env.HOST,
+  console.log("Listening on port." + process.env.HOST)
+);
