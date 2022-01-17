@@ -20,6 +20,6 @@ app.get("/success", (req, res) => {
 });
 
 app.listen(
-  process.env.HOST,
+  process.env.HOST || 3000,
   console.log("Listening on port." + process.env.HOST)
 );
