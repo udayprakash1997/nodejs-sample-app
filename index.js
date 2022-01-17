@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const app = express();
 
 const path = require("path");
@@ -9,7 +10,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  res.sendFile(__dirname + "/public/login.html");
+  res.sendFile(__dirname + "/public/login.html", {
+    apiKey: process.env.SAWO_API_KEY,
+  });
 });
 
 app.get("/success", (req, res) => {
