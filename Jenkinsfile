@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git 'https://github.com/YOUR-REPOSITORY.git'
+        git 'https://github.com/udayprakash1997/nodejs-sample-app.git'
       } 
      stage('Install dependencies') {
        steps {
