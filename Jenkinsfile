@@ -1,28 +1,19 @@
 pipeline {
   agent any
-    
-  tools {nodejs "nodejs"}
-    
   stages {
-        
-    stage('Git') {
+    stage('Checkout') {
       steps {
-        git 'https://github.com/udayprakash1997/nodejs-sample-app.git'
+        git 'https://github.com/YOUR-REPOSITORY.git'
+      } 
+     stage('Install dependencies') {
+       steps {
+         sh 'npm install'
+       }
+     }
+      stage('Build and test') {
+        steps {
+          sh 'npm run build'
+          sh 'npm test'
+        }
       }
-    }
-     
-    stage('Build') {
-      steps {
-        sh 'npm install'
-         sh '<<Build Command>>'
-      }
-    }  
-    
-            
-    stage('Test') {
-      steps {
-        sh 'node test'
-      }
-    }
-  }
-}
+      // stage('Deploy') { steps { // Add your deployment script here } } } }
