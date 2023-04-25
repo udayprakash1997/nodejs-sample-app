@@ -2,7 +2,7 @@ node
 {
 
 //Checkout Code stage
-stage('CheckoutCode'){
+stage('CheckoutCode') {
 git url:'https://github.com/udayprakash1997/nodejs-sample-app.git'
 }
 
