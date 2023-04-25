@@ -1,19 +1,27 @@
-node
-{
-
-//Checkout Code stage
-stage('CheckoutCode') {
-git url:'https://github.com/udayprakash1997/nodejs-sample-app.git'
-}
-
-//Build
-stage('Build'){
-nodejs(nodeJSInstallationName: 'nodejs18.6.0'){
-sh "npm install"
-}
-}
-  stage('RunNodeJsApp')
-{
-sh "npm run app.js &"
-}
+pipeline {
+  agent any
+    
+  tools {nodejs "nodejs"}
+    
+  stages {
+        
+    stage('Git') {
+      steps {
+        git 'https://github.com/udayprakash1997/nodejs-sample-app.git'
+      }
+    }
+     
+    stage('Build') {
+      steps {
+        sh 'npm install'
+      }
+    }  
+    
+            
+    stage('Test') {
+      steps {
+        sh 'node test'
+      }
+    }
+  }
 }
