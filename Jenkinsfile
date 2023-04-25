@@ -16,4 +16,10 @@ pipeline {
           sh 'npm test'
         }
       }
-      // stage('Deploy') { steps { // Add your deployment script here } } } }
+       stage('Deploy') {
+         steps {
+           // Add your deployment script here
+         }
+       }
+    }
+  }
