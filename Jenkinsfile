@@ -16,6 +16,9 @@ pipeline {
         sh 'npm install'
         sh 'docker build -t xyz .
         sh 'docker run -itd -p 85:3000 --name xyz xyz
+        nodejs('nodejs') {
+    // some block
+        }
       }
     } 
   }
