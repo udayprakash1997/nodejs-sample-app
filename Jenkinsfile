@@ -14,8 +14,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm install'
-        sh 'docker build -t xyz .
-        sh 'docker run -itd -p 85:3000 --name xyz xyz
+        build 'nodejs'
         nodejs('nodejs') {
     // some block
         }
