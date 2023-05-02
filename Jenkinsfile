@@ -1,19 +1,15 @@
-node
-{
-
-//Checkout Code stage
-stage('CheckoutCode'){
-git  credentialsId: 'a7f700e7-98a4-4337-bd4a-aac2db5fd8fb', url: 'https://github.com/udayprakash1997/nodejs-sample-app.git'
+pipeline {
+   agent any
+   stages {
+         stage('Build Docker Image') {
+  steps {
+    sh 'docker build -t image1 .'
+  }
 }
-
-//Build
-stage('Build'){
-nodejs(nodeJSInstallationName: 'nodejs18.6.0'){
-sh "npm install"
+     stage('Run Docker Container') {
+  steps {
+    sh 'docker run -d -p 8000:3000 --name cont1 image1'
+  }
 }
-}
-  stage('RunNodeJsApp')
-{
-sh "npm run server.js"
 }
 }
