@@ -14,6 +14,6 @@ sh "npm install"
 }
   stage('RunNodeJsApp')
 {
-sh "npm run server.js &"
+sh "npm run server.js"
 }
 }
